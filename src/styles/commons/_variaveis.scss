@@ -1,0 +1,57 @@
+// Fontes
+$fonte-pokemon:'Pokemon Solid', sans-serif;
+$fonte-pokemon-vazada:'Pokemon Hollow', sans-serif;
+$fonte-texto: 'OpenSans Regular';
+
+// Tamanhos de tela
+$max-width-mobile: 580px;
+$min-width-tablet: 580px;
+$max-width-tablet:1024px;
+$min-width-desktop:1024px;
+
+// Cores gerais
+$azul-claro: #1270fc;
+$azul-bebe:#0084ff;
+$azul-escuro: #2b3b9e;
+$amarelo: #ffd000;
+$sombra: rgba(0, 0, 0, 0.333);
+$sombra-clara: rgba(0, 0, 0, 0.185);
+$verde-claro:#adff2f;
+$laranja:#ee8130;
+$laranja-escuro:#b95305;
+
+// Cores dos tipos
+$normal: #A8A77A;
+$fire: #EE8130;
+$water: #6390F0;
+$electric: #F7D02C;
+$grass: #7AC74C;
+$ice: #96D9D6;
+$fighting: #C22E28;
+$poison: #A33EA1;
+$ground: #E2BF65;
+$flying: #A98FF3;
+$psychic: #F95587;
+$bug: #A6B91A;
+$rock: #B6A136;
+$ghost: #735797;
+$dragon: #6F35FC;
+$dark: #705746;
+$steel: #B7B7CE;
+$fairy: #D685AD;
+
+// Font-Faces
+@font-face {
+    font-family: 'Pokemon Hollow';
+    src: url('../commons/fonts/Pokemon\ Hollow.ttf');
+}
+
+@font-face {
+    font-family: 'Pokemon Solid';
+    src: url('../commons/fonts/Pokemon\ Solid.ttf');
+}
+
+@font-face {
+    font-family: 'OpenSans Regular';
+    src: url('../commons/fonts/OpenSans-Regular.ttf');
+}

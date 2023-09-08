@@ -1,0 +1,35 @@
+@import '../../styles/commons/variaveis';
+
+.rodape {
+	background-image: url('../../../public/images/banner-background.png');
+    font-family: $fonte-texto;
+    color: white;
+	padding: 1.5em 0;
+    font-weight: 500;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	font-size: 1em;
+	width: 100%;
+	margin: 0 auto;
+	height: 2em;
+
+	&__links {
+		display: flex;
+		align-items: flex-end;
+		a {
+			text-decoration: none;
+			color: white;
+			font-size: 1.1em;
+			padding-left: 0.3em;
+            height: 1.1em;
+		}
+
+	}
+}
+
+@media screen and (max-width:$max-width-mobile) {
+    .rodape {
+        font-size: 0.8em;
+    }
+}

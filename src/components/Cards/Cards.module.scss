@@ -1,0 +1,157 @@
+@import '../../styles/commons/variaveis';
+
+.container__loading {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+
+    .loading {
+        scale: 0.1;
+        animation: loading .3s infinite linear alternate;
+        z-index: -1;
+    }
+}
+
+@keyframes loading {
+
+    0% {
+        transform: translate3d(0,0,0);
+    }
+
+    40% {
+        transform: translate3d(0,25%,0);
+    }
+
+    100% {
+        transform: translate3d(0,100%,0);
+    }
+
+}
+
+.cards {
+    width:70%;
+    display: grid;
+    margin: 4em auto 0 auto;
+    justify-content: center;
+    gap: 1.2em;
+    min-height: 30vh;
+
+    .mensagem {
+        grid-row: 1;
+        font-family: $fonte-texto;
+        color: black;
+        display: flex;
+        align-items: center;
+        gap: 5px;
+        flex-wrap: wrap;
+        width: 80%;
+
+        span {
+            text-decoration: underline;
+            text-transform: capitalize;
+        }
+    }
+
+    .notFound {
+        align-self: center;
+        text-align: center;
+        font-family: $fonte-texto;
+        font-size: 0.9em;
+        place-self: center;
+        width: 100vw;
+
+        svg {
+            font-size: 6em;
+        }
+
+    }
+
+}
+
+.botao {
+    margin-bottom: 1em;
+    width: 100%;
+    padding: 0 0.5em;
+    background-color: transparent;
+    border: none;
+    color: black;
+    font-size: 2em;
+    font-weight: 700;
+    transition: 300ms;
+    
+    &:hover {
+        transform: (translateY(8px));
+        cursor: pointer;
+    }
+}
+
+@media screen and (min-width:$min-width-desktop) {
+  
+    .cards {
+        grid-template-columns: repeat(4, 1fr);
+        margin: 6em auto;
+        
+        .mensagem {
+            grid-column: 1 / span 4;
+
+            svg {
+
+                &:hover {
+                    cursor: pointer;
+                }
+            }
+        }
+
+        .notFound {
+    
+        }
+    }
+    
+    .container__loading {
+        height: 60vh;
+    }
+
+}
+
+@media screen and (min-width:$min-width-tablet) and (max-width:$max-width-tablet) {
+  
+    .cards {
+        grid-template-columns: repeat(3, 1fr);
+        min-height: 50vh;
+
+        .mensagem {
+            grid-column: 1 / span 3;
+            margin-top: 1em;
+            font-size: 0.9em;
+        }
+    }
+
+    .container__loading {
+        height: 65vh;
+    }
+
+}
+
+@media screen and (max-width:$max-width-mobile) {
+    .cards {
+        grid-template-columns: repeat(1, 1fr);
+        width: 100%;
+        justify-items: center;
+        gap: 0;
+        min-height: 60vh;
+
+        .mensagem {
+            width: 70%;
+            grid-column: 1;
+            font-size: 0.75em;
+            margin-bottom: 1em;
+            text-align: center;
+            justify-content: center;
+
+        }
+    }
+
+    .container__loading {
+        height: 70vh;
+    }
+}

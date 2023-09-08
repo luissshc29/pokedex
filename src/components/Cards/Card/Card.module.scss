@@ -1,0 +1,177 @@
+@import '../../../styles/commons/variaveis';
+
+.card {
+    border-radius: 15px;
+    text-align: center;
+    padding: 1em;
+    box-shadow: 0px 2px 4px $sombra;
+    text-transform: capitalize;
+    font-family: $fonte-texto;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+
+    &__imagem {
+        width: 70%;
+        margin: 0 auto;
+    }
+
+    &__nome {
+        font-size: 1.2em;
+        font-weight: 700;
+        border-bottom: 1px solid black;
+    }
+
+    &__tipos {
+        display: flex;
+        justify-content: center;
+        gap: 1.5em;
+
+        &__tipo {
+            color: white;
+            background-color: blue;
+            border-radius: 5px;
+            font-size: 0.8em;
+            padding: 0.3em 0.7em;
+            box-shadow: 0px 2px 4px $sombra;
+
+            &__normal {
+                background-color: $normal;
+            }
+
+            &__fighting {
+                background-color: $fighting;
+            }
+
+            &__flying {
+                background-color: $flying;
+            }
+
+            &__poison {
+                background-color: $poison;
+            }
+
+            &__ground {
+                background-color: $ground;
+            }
+
+            &__rock {
+                background-color: $rock;
+            }
+
+            &__bug {
+                background-color: $bug;
+            }
+
+            &__ghost {
+                background-color: $ghost;
+            }
+
+            &__steel {
+                background-color: $steel;
+            }
+
+            &__fire {
+                background-color: $fire
+            }
+
+            &__water {
+                background-color: $water;
+            }
+
+            &__grass {
+                background-color: $grass;
+            }
+
+            &__electric {
+                background-color: $electric;
+            }
+
+            &__psychic {
+                background-color: $psychic;
+            }
+
+            &__ice {
+                background-color: $ice;
+            }
+
+            &__dragon {
+                background-color: $dragon;
+            }
+
+            &__dark {
+                background-color: $dark;
+            }
+
+            &__fairy {
+                background-color: $fairy;
+            }
+
+            &__unknow {
+                display: none;
+            }
+
+            &__shadow {
+                display: none;
+            }
+        }
+    }
+
+}
+
+@media screen and (min-width:$min-width-desktop) {
+  
+    .card {
+        transition: 300ms;
+
+        &:hover {
+            transform: (translateY(-8px));
+            cursor: pointer;
+        }
+
+        &:active {
+            box-shadow: -1px -1px 4px $sombra-clara inset, 1px 1px 4px $sombra-clara inset;
+        }
+    }
+}
+
+@media screen and (min-width:$min-width-tablet) and (max-width:$max-width-tablet) {
+  
+    .card {
+
+    }
+}
+
+@media screen and (max-width:$max-width-mobile) {
+    .card {
+        width: 80%;
+        padding: 1.5em 0.5em;
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        grid-template-rows: 1fr 1fr 1fr;
+        align-items: center;
+        box-shadow: none;
+        border-top: 0.5px solid $sombra;
+        border-bottom: 0.5px solid $sombra;
+        border-radius: 0;
+
+        &__imagem {
+            width: 90%;
+            grid-row: 1 / span 3;
+            grid-column: 1;
+
+        }
+
+        &__numero {
+            font-size: 0.9em;
+        }
+
+        &__tipos {
+            justify-content: center;
+
+            &__tipo {
+                margin: auto 0;
+            }
+        }
+    }
+}
