@@ -4,6 +4,7 @@ import styles from './ContainerIndividual.module.scss'
 import BotoesNav from './BotoesNav'
 import { useRouter } from 'next/router'
 import axios from 'axios'
+import { GrUserWorker } from 'react-icons/gr'
 
 export default function ContainerIndividual() {
 
@@ -48,6 +49,13 @@ export default function ContainerIndividual() {
     useEffect(() => {
         obterPokemon()
     }, [router.query.id])
+
+    return (
+        <div className={styles.provisorio}>
+            <p>Página em produção. Resultado em breve!</p>
+            <GrUserWorker/>
+        </div>
+    )
 
     return (
         <>
