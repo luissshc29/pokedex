@@ -26,7 +26,6 @@ export default function MenuFiltros() {
         alteraFiltro(filtroAtivo)
 
         aleatorizaLista(aleatoriaLocal)
-        
         setMenuAtivo(!menuAtivo)
 
         if (aleatoriaLocal) {
