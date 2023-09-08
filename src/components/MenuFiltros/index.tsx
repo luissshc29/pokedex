@@ -26,6 +26,8 @@ export default function MenuFiltros() {
         alteraFiltro(filtroAtivo)
 
         aleatorizaLista(aleatoriaLocal)
+        
+        setMenuAtivo(!menuAtivo)
 
         if (aleatoriaLocal) {
             alteraOrdenacao('')
@@ -69,10 +71,6 @@ export default function MenuFiltros() {
                 className={`${styles.formulario} ${!menuAtivo && styles.formulario__inativo}`}
                 onSubmit={evento => submeterFormulario(evento)}
             >
-                {
-                    menuAtivo && <AiFillCloseCircle onClick={() => setMenuAtivo(!menuAtivo)}/>
-                }
-
                 <div className={styles.formulario__containerTipo}>
                     <label htmlFor="select-tipo">Por tipo:</label>
                     <select name='select-tipo' onChange={(evento) => setFiltroAtivo(evento.target.value)}>

@@ -39,7 +39,7 @@
     .formulario {
         font-family: $fonte-texto;
         background-image: url('../../../public/images/banner-background.png');
-        padding: 1em 1em 2em 1em;
+        padding: 2em;
         border-radius: 15px 0 15px 15px;
         color: white;
         font-size: 0.9em;
@@ -48,11 +48,6 @@
         row-gap: 1em;
         box-shadow: -3px 3px 4px gray;
         z-index: 1;
-
-        svg {
-            font-size: 1.5em;
-            z-index: 1;
-        }
 
         &__containerTipo {
             width: 100%;
@@ -192,12 +187,6 @@
         }
         
         .formulario {
-
-            svg {
-                &:hover {
-                    cursor: pointer;
-                }
-            }
 
             &__botao {
                 transition: 300ms;

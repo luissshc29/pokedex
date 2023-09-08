@@ -21,7 +21,7 @@ export default function MenuOrdenador() {
 
         alteraOrdenacao(opcaoAtiva)
         aleatorizaLista(false)
-
+        setMenuAtivo(!menuAtivo)
     }
 
     const [opcoes, setOpcoes] = useState<string[]>(['A-Z', 'Z-A', 'Por id crescente', 'Por id decrescente'])
@@ -65,10 +65,6 @@ export default function MenuOrdenador() {
                 className={`${styles.formulario} ${!menuAtivo && styles.formulario__inativo}`}
                 onSubmit={evento => submeterFormulario(evento)}
             >
-                {
-                    menuAtivo && <AiFillCloseCircle onClick={() => setMenuAtivo(!menuAtivo)}/>
-                }
-
                 <div className={styles.formulario__containerTipo}>
                     <label htmlFor="select-tipo">Ordenar por:</label>
                     <select name='select-tipo' onChange={(evento) => setOpcaoAtiva(evento.target.value)}>
