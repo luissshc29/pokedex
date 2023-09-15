@@ -9,6 +9,7 @@
     font-family: $fonte-texto;
     width: 100vw;
     min-height: 60vh;
+    text-align: center;
 
     h2 {       
         font-size: 1.6em;
@@ -20,6 +21,7 @@
     }
 
     ul {
+        text-align: left;
 
         li {
             font-size: 0.9em;
@@ -36,5 +38,7 @@
 @media screen and (max-width:$max-width-mobile) {
     .notFound {
         min-height: 80vh;
+        width: 80%;
+        margin: 0 auto;
     }
 }
