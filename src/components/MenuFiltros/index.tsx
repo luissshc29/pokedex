@@ -4,7 +4,7 @@ import styles from './MenuFiltros.module.scss'
 import { BsFilterLeft } from 'react-icons/bs'
 import  { BiFilterAlt } from 'react-icons/bi'
 import { FaRandom } from 'react-icons/fa'
-import { AiOutlineCloseCircle, AiFillCloseCircle } from 'react-icons/ai'
+import { AiOutlineCloseCircle } from 'react-icons/ai'
 import { useFiltrosContext } from '../../context/Filtros'
 import { useOrdenacaoContext } from '../../context/Ordenacao'
 

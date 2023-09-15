@@ -1,0 +1,151 @@
+@import '../../../styles/commons/variaveis';
+
+.containerEvolucao {
+    display: grid;
+    margin: 2em auto;
+    align-items: center;
+    justify-items: center;
+    padding: 2em;
+    background: linear-gradient(to right bottom, $cinza-escuro, $steel);
+    border-radius: 15px;
+    gap: 2em;
+    box-shadow: 0px 6px 10px $sombra;
+
+    h2 {
+        font-size: 2em;
+        text-align: center;
+        font-family: $fonte-texto;
+        font-weight: 500;
+        color: white;
+        text-decoration: underline;
+        text-shadow: 2px 0 6px $sombra;
+    }
+
+    &__card {
+        text-align: center;
+        padding: 1.5em;
+        border-radius: 100%;
+        background-color: $cinza-muito-claro;
+        font-family: $fonte-texto;
+        box-shadow: 3px 3px 6px $sombra;
+        transition: 250ms;
+        
+        &:hover {
+            cursor: pointer;
+            transform: translateY(-8px);
+        }
+
+        &__nome {
+            text-transform: capitalize;
+            color: white;
+            text-decoration: underline;
+            text-shadow: 2px 0 6px $sombra;
+        }
+
+        &__numero {
+            color: $cinza;
+            text-shadow: 2px 0 6px $sombra;
+        }
+
+        &__imagem {
+            
+        }
+
+    }
+
+}
+
+@media screen and (min-width:$min-width-desktop) {
+   
+    .containerEvolucao {
+        grid-template-columns: repeat(3, 1fr);
+        width: 80%;
+
+        h2 {
+            grid-column: 1 / span 3;
+        }
+    
+        &__card {
+            height: 80%;
+            width: 55%;
+    
+            &__nome {
+                font-size: 1.3em;
+
+            }
+    
+            &__numero {
+
+            }
+
+            &__imagem {         
+                width: 60%;
+            }
+    
+        }
+    }
+
+}
+
+@media screen and (min-width:$min-width-tablet) and (max-width:$max-width-tablet) {
+      
+    .containerEvolucao {
+        grid-template-columns: repeat(3, 1fr);
+        width: 80%;
+
+        h2 {
+            grid-column: 1 / span 3;
+        }
+    
+        &__card {
+            height: 80%;
+            width: 70%;
+    
+            &__nome {
+                font-size: 1em;
+
+            }
+    
+            &__numero {
+
+            }
+
+            &__imagem {         
+                width: 60%;
+            }
+    
+        }
+    }
+
+}
+
+@media screen and (max-width:$max-width-mobile) {
+    .containerEvolucao {
+        grid-template-columns: 1fr;
+        width: 70%;
+
+        h2 {
+            grid-column: 1;
+            font-size: 1.8em;
+        }
+    
+        &__card {
+            height: 8em;
+            width: 8em;
+            padding: 2em;
+    
+            &__nome {
+                font-size: 1em;
+
+            }
+    
+            &__numero {
+
+            }
+
+            &__imagem {        
+            }
+    
+        }
+    }
+}

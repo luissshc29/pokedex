@@ -3,7 +3,7 @@ import axios from 'axios'
 import styles from './MenuOrdenador.module.scss'
 import { GoListUnordered } from 'react-icons/go'
 import  { IoReorderThreeOutline } from 'react-icons/io5'
-import { AiOutlineCloseCircle, AiFillCloseCircle } from 'react-icons/ai'
+import { AiOutlineCloseCircle } from 'react-icons/ai'
 import { useOrdenacaoContext } from '../../context/Ordenacao'
 import { useFiltrosContext } from '../../context/Filtros'
 

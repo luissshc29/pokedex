@@ -1,0 +1,40 @@
+@import '../../styles/commons/variaveis';
+
+.notFound {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 1em;
+    font-family: $fonte-texto;
+    width: 100vw;
+    min-height: 60vh;
+
+    h2 {       
+        font-size: 1.6em;
+        font-weight: 600;
+    }
+
+    p {
+        font-size: 1.2em;
+    }
+
+    ul {
+
+        li {
+            font-size: 0.9em;
+        }
+
+    }
+
+    svg {
+        font-size: 3em;
+    }
+
+}
+
+@media screen and (max-width:$max-width-mobile) {
+    .notFound {
+        min-height: 80vh;
+    }
+}

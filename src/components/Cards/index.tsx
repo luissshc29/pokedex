@@ -4,12 +4,11 @@ import Card from './Card'
 import styles from './Cards.module.scss'
 import { IPokemon } from '../../interfaces/IPokemon'
 import axios from 'axios'
-import { IoIosArrowDown } from 'react-icons/io'
 import { useFiltrosContext } from '../../context/Filtros'
 import { AiOutlineCloseCircle } from 'react-icons/ai'
-import { TbPokeballOff } from 'react-icons/tb'
 import { v4 as uuidv4 } from 'uuid'
 import { useOrdenacaoContext } from '../../context/Ordenacao'
+import Componente404 from '../404'
 
 export default function Cards() {
 
@@ -89,15 +88,6 @@ export default function Cards() {
             }))
             .catch(err => console.log(err))
 
-        // if (busca) {
-        
-        //     if (!isNaN(Number(busca.toString()))) {
-        
-        //         setListaPokemonDetalhada(listaPokemonDetalhada.filter(item => item.id === Number(busca)))
-
-        //     }
-        // }
-
         setListaPokemonDetalhada(listaFinal)
 
         setTimeout(() => {    
@@ -168,48 +158,8 @@ export default function Cards() {
                     
                 </h2> :
 
-                <div className={styles.notFound}>
-                    <TbPokeballOff/>
-                    <h2>Não encontramos nenhum pokemon</h2>
-                </div>
+                <Componente404/>
                 }
-
-{/* 
-                {ordenacao === 'Por id crescente' && 
-                    listaPokemonDetalhada.sort((a, b) => a.id - b.id).map(item => (
-                        <Card
-                            key={uuidv4()}
-                            pokemon={item}
-                        />
-                    ))
-                }
-
-                {ordenacao === 'Por id decrescente' && 
-                    listaPokemonDetalhada.sort((a, b) => b.id - a.id).map(item => (
-                        <Card
-                            key={uuidv4()}
-                            pokemon={item}
-                        />
-                    ))
-                }
-
-                {ordenacao === 'A-Z' && 
-                    listaPokemonDetalhada.sort((a, b) => a.name > b.name ? 1 : -1).map(item => (
-                        <Card
-                            key={uuidv4()}
-                            pokemon={item}
-                        />
-                    ))
-                }
-
-                {ordenacao === 'Z-A' && 
-                    listaPokemonDetalhada.sort((a, b) => b.name > a.name ? 1 : -1).map(item => (
-                        <Card
-                            key={uuidv4()}
-                            pokemon={item}
-                        />
-                    ))
-                } */}
 
                 { 
                     ordenaLista(listaPokemonDetalhada).map(item => (
@@ -221,12 +171,6 @@ export default function Cards() {
                 }
 
             </div>
-            
-                {/* <button 
-                    className={styles.botao}
-                >
-                    <IoIosArrowDown/>
-                </button> */}
         </>
     )
 }

@@ -4,7 +4,6 @@ export default function Document() {
   return (
     <Html>
       <Head>
-        <title>Pokédex</title>
         <link rel='shortcut icon' href='/images/logo-site.png'/>
       </Head>
       <body>

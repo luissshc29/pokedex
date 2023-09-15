@@ -9,9 +9,9 @@ export default function Card({ pokemon }: { pokemon: IPokemon }) {
     const router = useRouter()
 
     return (
-        <div className={styles.card} onClick={() => router.push(`/${pokemon.id}`)}>
+        <div className={styles.card} onClick={() => router.push(`/pokemon/${pokemon.name}`)}>
             <img src={pokemon.sprites.front_default} className={styles.card__imagem}/>
-            <h2 className={styles.card__nome}>{pokemon.name.replaceAll('-', ' ')}</h2>
+            <h2 className={styles.card__nome}>{pokemon.name.includes('-mega') ? 'Mega ' + pokemon.name.replaceAll('-', ' ').replace('mega', '') : pokemon.name.replaceAll('-', ' ')}</h2>
             <p className={styles.card__numero}>Nº {pokemon.id}</p>
             <div className={styles.card__tipos}>   
                 {pokemon.types.map(item => (

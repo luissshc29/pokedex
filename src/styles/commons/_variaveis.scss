@@ -2,12 +2,16 @@
 $fonte-pokemon:'Pokemon Solid', sans-serif;
 $fonte-pokemon-vazada:'Pokemon Hollow', sans-serif;
 $fonte-texto: 'OpenSans Regular';
+$fonte-texto-secundaria: 'Harvest Bailey';
 
 // Tamanhos de tela
 $max-width-mobile: 580px;
 $min-width-tablet: 580px;
 $max-width-tablet:1024px;
 $min-width-desktop:1024px;
+
+// Imagens
+$imagem-principal:url('../../../public/images/banner-background.png');
 
 // Cores gerais
 $azul-claro: #1270fc;
@@ -19,6 +23,10 @@ $sombra-clara: rgba(0, 0, 0, 0.185);
 $verde-claro:#adff2f;
 $laranja:#ee8130;
 $laranja-escuro:#b95305;
+$cinza:#cfcfcf;
+$cinza-claro:#c7c7c7;
+$cinza-escuro:#636363;
+$cinza-muito-claro:rgba(0, 0, 0, 0.082);
 
 // Cores dos tipos
 $normal: #A8A77A;
@@ -54,4 +62,9 @@ $fairy: #D685AD;
 @font-face {
     font-family: 'OpenSans Regular';
     src: url('../commons/fonts/OpenSans-Regular.ttf');
+}
+
+@font-face {
+    font-family: 'Harvest Bailey';
+    src: url('../commons/fonts/HarvestBailey.ttf');
 }

@@ -1,52 +1,425 @@
 @import '../../styles/commons/variaveis';
 
-.provisorio {
-    min-height: 50vh;
-    display: grid;
-    place-items: center;
-    text-align: center;
-    gap: 1em;
+.container__loading {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    height: 50vh;
 
-    p, svg {
-        font-family: $fonte-texto;
-        font-size: 1.2em;
-    }
-
-    svg{
-        align-self: flex-start;
-    }
-
-    p {
-        align-self: flex-end;
+    .loading {
+        scale: 0.1;
+        animation: loading .3s infinite linear alternate;
+        z-index: -1;
     }
 }
 
-.container {
+@keyframes loading {
 
+    0% {
+        transform: translate3d(0,0,0);
+    }
+
+    40% {
+        transform: translate3d(0,25%,0);
+    }
+
+    100% {
+        transform: translate3d(0,100%,0);
+    }
+
+}
+
+.container {
+    width: 90%;
+    min-height: 50vh;
+    display: grid;
+    justify-items: center;
+    align-items: center;
+    margin: 2em auto;
+    padding: 1.5em;
+    background-color: $cinza-muito-claro;
+    border-radius: 15px;
+    box-shadow: 0 3px 6px $sombra;
+    row-gap: 1em;
+
+    &__nome{
+        font-family: $fonte-texto-secundaria;
+        text-transform: capitalize;
+        color: black;
+        font-weight: 600;
+    }
+    
+    &__numero{
+        font-family: $fonte-texto-secundaria;
+        color: $cinza-escuro;
+        font-weight: 600;
+    }
+
+    &__imagem {
+        background-color: white;
+        border-radius: 15px;
+        padding: 0.5em;
+        box-shadow: 0.5px 0.5px 4px $sombra inset, -0.5px -0.5px 4px $sombra inset;
+    }
+    
+    &__sprites__msg {
+        grid-row: 4;
+        grid-column: 1;
+        font-family: $fonte-texto-secundaria;
+        font-weight: 600;
+        margin-top: 1em;
+    }
+
+    &__imagensAlt {
+        grid-row: 5;
+        display: flex;
+        justify-content: space-evenly;
+        margin: 0 0 1em 0;
+        gap: 0.4em;
+        max-width: 100%;
+
+        .img_ativa {
+            border: 1px solid black;
+        }
+
+        img {
+            background-color: white;
+            border-radius: 15px;
+            box-shadow: 0.5px 0.5px 4px $sombra inset, -0.5px -0.5px 4px $sombra inset;
+            padding: 0.5em;
+
+            &:hover {
+                cursor: pointer;
+            }
+        }
+
+    }
+
+    &__infos {    
+        box-shadow: 3px 3px 6px $sombra;
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        align-items: center;
+        justify-content: space-evenly;
+        width: 80%;
+        height: 80%;
+        background-image: $imagem-principal;
+        padding: 1em;
+        border-radius: 15px;
+        justify-self: center;
+
+        &__info {
+            
+            h3 {
+                font-size: 1.2em;
+                color: white;
+                font-family: $fonte-texto-secundaria;
+                font-weight: 600;
+                letter-spacing: 1px;
+            }
+
+            p {
+                font-size: 1em;
+                color: $cinza-claro;
+                font-family: $fonte-texto;
+                text-transform: capitalize;
+            }
+        }
+    }
+
+    &__tipos {
+        grid-row: 4 / span 2;
+        align-self: center;
+        justify-self: start;
+        display: flex;
+        width: 100%;
+        text-transform: capitalize;
+        justify-content: center;
+        gap: 1em;
+        font-family: $fonte-texto;
+
+        &__tipo {
+            color: white;
+            background-color: blue;
+            border-radius: 5px;
+            font-size: 0.8em;
+            padding: 0.3em 0.7em;
+            box-shadow: 0px 2px 4px $sombra;
+            width: 15%;
+            font-size: 1em;
+            text-align: center;
+            box-shadow: 3px 3px 6px $sombra;
+
+            &__normal {
+                background-color: $normal;
+            }
+
+            &__fighting {
+                background-color: $fighting;
+            }
+
+            &__flying {
+                background-color: $flying;
+            }
+
+            &__poison {
+                background-color: $poison;
+            }
+
+            &__ground {
+                background-color: $ground;
+            }
+
+            &__rock {
+                background-color: $rock;
+            }
+
+            &__bug {
+                background-color: $bug;
+            }
+
+            &__ghost {
+                background-color: $ghost;
+            }
+
+            &__steel {
+                background-color: $steel;
+            }
+
+            &__fire {
+                background-color: $fire
+            }
+
+            &__water {
+                background-color: $water;
+            }
+
+            &__grass {
+                background-color: $grass;
+            }
+
+            &__electric {
+                background-color: $electric;
+            }
+
+            &__psychic {
+                background-color: $psychic;
+            }
+
+            &__ice {
+                background-color: $ice;
+            }
+
+            &__dragon {
+                background-color: $dragon;
+            }
+
+            &__dark {
+                background-color: $dark;
+            }
+
+            &__fairy {
+                background-color: $fairy;
+            }
+
+            &__unknow {
+                display: none;
+            }
+
+            &__shadow {
+                display: none;
+            }
+        }
+
+    }
 }
 
 @media screen and (min-width:$min-width-desktop) {
   
     .container {
+        grid-template-columns: 50% 50%;
+        grid-template-rows: repeat(4, auto);
+
+        &__nome{
+            grid-column: 1 / span 2;
+            grid-row: 1;
+            font-size: 3em;
+        }
+
+        &__numero{
+            grid-column: 1 / span 2;
+            grid-row: 2;
+            font-size: 2em;
+        }
+
+        &__imagem {
+            width: 60%;
+        }
+
+        &__imagensAlt {
+            padding: 0.5em;
+            justify-content: center;
+
+            img {
+                width: 25%;
+            }
+
+        }
+
+        &__infos {
+
+            &__info {
+                
+                h3 {
+
+                }
+
+                p {
+
+                }
+
+            }
+        }
 
     }
-
 }
 
 @media screen and (min-width:$min-width-tablet) and (max-width:$max-width-tablet) {
   
     .container {
+        grid-template-columns: 50% 50%;
+        grid-template-rows: repeat(4, auto);
+
+        &__nome{
+            grid-column: 1 / span 2;
+            grid-row: 1;
+            font-size: 3em;
+        }
+
+        &__numero{
+            grid-column: 1 / span 2;
+            grid-row: 2;
+            font-size: 2em;
+        }
+
+        &__imagem {
+            width: 60%;
+        }
+
+        &__imagensAlt {
+            padding: 1.2em;
+            gap: 0.5em;
+            justify-content: center;
+
+            img {
+                width: 20%;
+            }
+
+        }
+
+        &__infos {
+
+            &__info {
+                
+                h3 {
+
+                }
+
+                p {
+
+                }
+
+            }
+        }
+
+        &__tipos {
+    
+            &__tipo {
+                width: 20%;
+            }
+        }
 
     }
 
 }
 
 @media screen and (max-width:$max-width-mobile) {
-    .provisorio {
-        min-height: 70vh;
+
+    .container__loading {
+        height: 70vh;
     }
-    
+
     .container {
+        width: 80%;
+        grid-template-columns: 1fr;
+        margin: 1em auto;
+        padding: 2em 1em;
+
+        &__nome{
+            grid-column: 1;
+            grid-row: 1;
+            font-size: 1.5em;
+        }
+
+        &__numero{
+            grid-column: 1;
+            grid-row: 2;
+            font-size: 1em;
+        }
+
+        &__imagem {
+            grid-row: 3;
+            width: 60%;
+        }
+
+        &__sprites__msg {
+            grid-row: 5;
+            font-family: $fonte-texto-secundaria;
+            font-weight: 600;
+            margin-top: 1em;
+        }
+
+        &__imagensAlt {
+            grid-row: 6;
+            gap: 0.3em;
+            justify-content: center;
+            padding: 0.5em;
+            margin: 0 0 1em 0;
+
+            img {
+                width: 18%;
+            }
+
+        }
+
+        &__infos {
+            justify-self: center;
+            padding: 0.5em;
+            height: 100%;
+            width: 100%;
+            grid-row: 7;
+
+            &__info {
+                text-align: center;
+                
+                h3 {
+                    font-size: 1em;
+                }
+
+                p {
+                    font-size: 0.9em;
+                }
+
+            }
+        }
+
+        &__tipos {
+            grid-row: 4;
+
+            &__tipo {
+                width: 20%;
+            }
+        }
 
     }
 }

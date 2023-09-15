@@ -36,9 +36,20 @@ export default function GlobalStyles() {
                 width: 2px;
             }
 
+            ::-webkit-scrollbar:horizontal {
+                background-color: transparent;
+                height: 2px;
+            }
+
             ::-webkit-scrollbar-thumb {
                 background-color: #00002e;
                 width: 2px;
+                border-radius: 24px;
+            }
+            
+            ::-webkit-scrollbar-thumb:horizontal {
+                background-color: #00002e;
+                height: 2px;
                 border-radius: 24px;
             }
 

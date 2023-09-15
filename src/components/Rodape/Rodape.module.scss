@@ -1,7 +1,7 @@
 @import '../../styles/commons/variaveis';
 
 .rodape {
-	background-image: url('../../../public/images/banner-background.png');
+	background-image: $imagem-principal;
     font-family: $fonte-texto;
     color: white;
 	padding: 1.5em 0;
