@@ -84,10 +84,8 @@ export default function Cards() {
         axios.all(URLs.map(url => 
             axios.get(url)))
             .then(res => res.map(item => {
-                listaFinal.push(item.data)
-                setTimeout(() => {    
-                    setLoading(false)
-                }, 1800)
+                listaFinal.push(item.data) 
+                setLoading(false)
             }))
             .catch(err => console.log(err))
 
