@@ -85,14 +85,14 @@ export default function Cards() {
             axios.get(url)))
             .then(res => res.map(item => {
                 listaFinal.push(item.data)
+                setTimeout(() => {    
+                    setLoading(false)
+                }, 1800)
             }))
             .catch(err => console.log(err))
 
         setListaPokemonDetalhada(listaFinal)
 
-        setTimeout(() => {    
-            setLoading(false)
-        }, 1500)
     }
 
     const [loading, setLoading] = useState<boolean>(true)
