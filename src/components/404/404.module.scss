@@ -12,7 +12,7 @@
     text-align: center;
 
     h2 {       
-        font-size: 1.6em;
+        font-size: 1.7em;
         font-weight: 600;
     }
 
@@ -30,7 +30,7 @@
     }
 
     svg {
-        font-size: 3em;
+        font-size: 3.2em;
     }
 
 }
@@ -38,7 +38,7 @@
 @media screen and (max-width:$max-width-mobile) {
     .notFound {
         min-height: 80vh;
-        width: 80%;
+        width: 90%;
         margin: 0 auto;
     }
 }

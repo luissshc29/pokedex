@@ -16,8 +16,6 @@ export const getStaticPaths: GetStaticPaths = async () => {
         return {params: {nome: item.name}}
     })
 
-    console.log(paths)
-
     return {
       paths,
       fallback: false,

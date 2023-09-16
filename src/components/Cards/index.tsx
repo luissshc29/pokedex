@@ -9,6 +9,7 @@ import { AiOutlineCloseCircle } from 'react-icons/ai'
 import { v4 as uuidv4 } from 'uuid'
 import { useOrdenacaoContext } from '../../context/Ordenacao'
 import Componente404 from '../404'
+import { useRouter } from 'next/router'
 
 export default function Cards() {
 
@@ -21,6 +22,8 @@ export default function Cards() {
     const {filtro, aleatoria} = useFiltrosContext()
 
     const {ordenacao, alteraOrdenacao} = useOrdenacaoContext()
+
+    const router = useRouter()
 
     const ordenaLista = (lista: IPokemon[]) => {
 
@@ -75,6 +78,12 @@ export default function Cards() {
             }
         }
 
+        if(listaBuscada.length === 0) {
+            setTimeout(() => {
+                router.push('/404')
+            }, 1500)
+        }
+
         var URLs = []
 
         listaBuscada.map(item => URLs.push(item.url))
@@ -90,7 +99,6 @@ export default function Cards() {
             .catch(err => console.log(err))
 
         setListaPokemonDetalhada(listaFinal)
-
     }
 
     const [loading, setLoading] = useState<boolean>(true)
@@ -133,7 +141,7 @@ export default function Cards() {
                 <img className={styles.loading} src='/images/loading.svg'/>
             </div>
         )
-    }
+    } 
 
     return (
         <>   

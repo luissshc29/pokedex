@@ -9,10 +9,9 @@ export default function Componente404() {
             <h2>Não encontramos nenhum Pokémon.</h2>
             <p>Recomendamos que tente:</p>
             <ul>
-                <li>Recarregar a página</li>
                 <li>Modificar a busca</li>
                 <li>Modificar os filtros</li>
-                <li>Alterar a URL</li>
+                <li>Inserir uma URL válida (eg.: "/", "/pokemon/...")</li>
             </ul>
         </div>
   )
