@@ -73,9 +73,68 @@ export default function Cards() {
         var listaBuscada = listaAleatoria
         
         if (busca) {
-            if (isNaN(Number(busca.toString()))) {
-                listaBuscada = listaBuscada.filter(item => item.name.includes(busca.toLowerCase().replaceAll(' ', '-')))
-            }
+            listaBuscada = listaBuscada.filter(item => {
+                if (busca.toLowerCase().includes('mega ')) {
+                    var buscaFormatada = busca.toLowerCase().replace('mega ', '')
+
+                    if (buscaFormatada.toLowerCase().includes(' y')) {                           
+                        buscaFormatada = buscaFormatada.replace(' y', ' mega y')
+                    }
+
+                    else if (buscaFormatada.toLowerCase().includes(' x')) {                           
+                        buscaFormatada = buscaFormatada.replace(' x', ' mega x')
+                    } else {
+                        buscaFormatada = buscaFormatada + ' mega'
+                    }
+
+                    return item.name.includes(buscaFormatada.toLowerCase().replaceAll(' ', '-'))
+
+                } else if (busca.toLowerCase().includes('primal ')) {
+                    var buscaFormatada = busca.toLowerCase().replace('primal ', '')
+                    buscaFormatada = buscaFormatada + ' primal'
+
+                    return item.name.includes(buscaFormatada.toLowerCase().replaceAll(' ', '-'))
+
+                } else if (busca.toLowerCase().includes('galarian')) {
+                    var buscaFormatada = busca.toLowerCase().replace('galarian', '').replace(' ', '')
+                    buscaFormatada = buscaFormatada + ' galar'
+
+                    return item.name.includes(buscaFormatada.toLowerCase().replaceAll(' ', '-'))
+
+                } else if (busca.toLowerCase().includes('alolan')) {
+                    var buscaFormatada = busca.toLowerCase().replace('alolan', '').replace(' ', '')
+                    buscaFormatada = buscaFormatada + ' alola'
+
+                    return item.name.includes(buscaFormatada.toLowerCase().replaceAll(' ', '-'))
+
+                } else if (busca.toLowerCase().includes('gigantamax') || busca.toLowerCase().includes('gmax')) {
+                    var buscaFormatada = busca.toLowerCase().replace('gigantamax', '').replace(' ', '').replace('gmax', '').replace(' ', '')
+                    buscaFormatada = buscaFormatada + ' gmax'
+
+                    return item.name.includes(buscaFormatada.toLowerCase().replaceAll(' ', '-'))
+
+                } else if (busca.toLowerCase().includes('paldean')) {
+                    var buscaFormatada = busca.toLowerCase().replace('paldean', '').replace(' ', '')
+                    buscaFormatada = buscaFormatada + ' paldea'
+
+                    return item.name.includes(buscaFormatada.toLowerCase().replaceAll(' ', '-'))
+
+                } else if (busca.toLowerCase().includes('hisui')) {
+                    var buscaFormatada = busca.toLowerCase().replace('hisui', '').replace(' ', '')
+                    buscaFormatada = buscaFormatada + ' hisui'
+
+                    return item.name.includes(buscaFormatada.toLowerCase().replaceAll(' ', '-'))
+
+                } else if (busca.toLowerCase().includes('totem')) {
+                    var buscaFormatada = busca.toLowerCase().replace('totem', '').replace(' ', '')
+                    buscaFormatada = buscaFormatada + ' totem'
+
+                    return item.name.includes(buscaFormatada.toLowerCase().replaceAll(' ', '-'))
+
+                } else {
+                    return item.name.includes(busca.toLowerCase().replaceAll(' ', '-'))
+                }
+            })
         }
 
         if(listaBuscada.length === 0) {
@@ -88,7 +147,7 @@ export default function Cards() {
 
         listaBuscada.map(item => URLs.push(item.url))
 
-        var listaFinal = []
+        var listaFinal:IPokemon[] = []
 
         axios.all(URLs.map(url => 
             axios.get(url)))

@@ -38,7 +38,8 @@
 @media screen and (max-width:$max-width-mobile) {
     .notFound {
         min-height: 80vh;
-        width: 90%;
+        width: 80%;
         margin: 0 auto;
+        font-size: 0.8em;
     }
 }
