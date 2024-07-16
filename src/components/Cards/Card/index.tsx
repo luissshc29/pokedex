@@ -36,16 +36,16 @@ export default function Card({ pokemon }: { pokemon: IPokemon }) {
 
     return (
         <div className={styles.card} onClick={() => router.push(`/pokemon/${pokemon.name}`)}>
-            <img src={pokemon.sprites.front_default} className={styles.card__imagem}/>
-            <h2 className={styles.card__nome}>{trataNomes(pokemon.name)}</h2>
-            <p className={styles.card__numero}>Nº {pokemon.id}</p>
+            <img src={pokemon?.sprites?.front_default} className={styles.card__imagem}/>
+            <h2 className={styles.card__nome}>{trataNomes(pokemon?.name)}</h2>
+            <p className={styles.card__numero}>Nº {pokemon?.id}</p>
             <div className={styles.card__tipos}>   
                 {pokemon.types.map(item => (
                     <p 
                         key={uuidv4()} 
                         className={`${styles.card__tipos__tipo} ${styles[`card__tipos__tipo__${item.type.name.toLowerCase()}`]}`}
                     >
-                        {item.type.name}
+                        {item?.type?.name}
                     </p>
                 ))} 
             </div>
