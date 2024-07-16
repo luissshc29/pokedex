@@ -34,7 +34,8 @@ export default function Card({ pokemon }: { pokemon: IPokemon }) {
         return nomeNovo
     }
 
-    return (
+    if (pokemon) {
+        return (
         <div className={styles.card} onClick={() => router.push(`/pokemon/${pokemon.name}`)}>
             <img src={pokemon?.sprites?.front_default} className={styles.card__imagem}/>
             <h2 className={styles.card__nome}>{trataNomes(pokemon?.name)}</h2>
@@ -51,4 +52,7 @@ export default function Card({ pokemon }: { pokemon: IPokemon }) {
             </div>
         </div>
     )
+    }
+    
+    
 }
