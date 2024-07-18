@@ -18,7 +18,7 @@ export default function EvoulutionChain() {
     const [evolutionChainDetalhada, setEvolutionChainDetalhada] = useState<IPokemonSpecies[]>([])
 
     const buscaEspeciePokemon = () => {
-
+        setLoading(true)
         var lista = []
 
         axios.get<IPokemon>(`https://pokeapi.co/api/v2${router.asPath}`)
@@ -41,9 +41,6 @@ export default function EvoulutionChain() {
         .then(res => {
             lista.push(res.data)
             obterEvolutionChainDetalhada(lista)
-        })
-        .then(() => {
-            console.log(evolutionChain)
         })
         .catch(err => console.log(err))
     }
@@ -84,10 +81,10 @@ export default function EvoulutionChain() {
 
     useEffect(() => {
         buscaEspeciePokemon()
-
         setTimeout(() => {  
             setLoading(false)
         }, 1800);
+
     }, [router.asPath])
 
 

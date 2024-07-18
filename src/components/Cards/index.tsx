@@ -227,12 +227,16 @@ export default function Cards() {
                 }
 
                 { 
-                    ordenaLista(listaPokemonDetalhada).map(item => (
+                    ordenaLista(listaPokemonDetalhada).map(item => {
+                        if (item)  {
+                            return (
                         <Card
                             key={uuidv4()}
                             pokemon={item}
                         />
-                    ))
+                    )
+                        }
+                    })
                 }
 
             </div>
